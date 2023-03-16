@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react';
-import { RandomFox } from '../components/RandomFox'
+import { LazyImage } from '../components/RandomFox'
 import type { MouseEventHandler } from 'react';
 
 //random function between 1 and 123
@@ -37,9 +37,17 @@ export default function Home() {
           Hello world!
         </h1>
        <button onClick={addNewFox}>Add new fox</button> 
-        {images.map((image) => (
+        {images.map((image, index) => (
           <div key={image.id} className="p-4">
-            <RandomFox image={image.url} />
+            <LazyImage src={image.url}
+              width="320"
+              height="auto"
+              className="mx-auto rounded-md bg-gray-300"
+              onClick={() => {
+                console.log("holi!");
+              }}     onLazyLoad={(img) => {
+                console.log(`Image #${index + 1} cargada. Nodo:`, img);
+              }}/>
           </div>
         ))}
         
