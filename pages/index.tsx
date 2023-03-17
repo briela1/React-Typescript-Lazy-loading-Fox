@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   const addNewFox: MouseEventHandler<HTMLButtonElement> = () => {
     const newImageItem: ImageItem = {
       id: generateId(),
-      url:`https://randomfox.ca/images/${myRandom()}.jpg`,
+      url: `https://randomfox.ca/images/${myRandom()}.jpg`,
     };
     setImages([...images, newImageItem]);
   }
@@ -54,25 +54,25 @@ const Home: NextPage = () => {
           Hello world!
         </h1> */}
         <p className="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-        React con TypeScript
-      </p>
-      <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        Componente Lazy Image
-      </h3>
-      <div className="max-w-xl mx-auto text-xl text-gray-500 leading-7">
-        <p className="mt-4">
-          Un componente genérico de React para cargar imágenes con lazy loading.
+          React con TypeScript
         </p>
-        <p className="mt-4">✨✨</p>
-        <p className="mt-4">
-          Las imágenes agregadas no se descargarán hasta que sean visibles en la
-          pantalla
-        </p>
-        <p className="mt-4">✨✨</p>
-      </div>
+        <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+          Componente Lazy Image
+        </h3>
+        <div className="max-w-xl mx-auto text-xl text-gray-500 leading-7">
+          <p className="mt-4">
+            Un componente genérico de React para cargar imágenes con lazy loading.
+          </p>
+          <p className="mt-4">✨✨</p>
+          <p className="mt-4">
+            Las imágenes agregadas no se descargarán hasta que sean visibles en la
+            pantalla
+          </p>
+          <p className="mt-4">✨✨</p>
+        </div>
         <div className="m-4">
-        <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ">Add new fox</button> 
-       </div>
+          <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ">Add new fox</button>
+        </div>
         {images.map((image, index) => (
           <div key={image.id} className="p-4">
             <LazyImage src={image.url}
@@ -81,12 +81,12 @@ const Home: NextPage = () => {
               className="mx-auto rounded-md bg-gray-300"
               onClick={() => {
                 console.log("holi!");
-              }}     onLazyLoad={(img) => {
+              }} onLazyLoad={(img) => {
                 console.log(`Image #${index + 1} cargada. Nodo:`, img);
-              }}/>
+              }} />
           </div>
         ))}
-        
+
       </main>
       <footer className="text-center mt-auto p-6 text-sm text-gray-500">
         <p>
