@@ -36,6 +36,8 @@ export const LazyImage = ({ src, onLazyLoad,...imgProps }: Props): JSX.Element =
             if (typeof onLazyLoad === "function") {
                 onLazyLoad(node.current);
               }
+             // Ejemplo de extension de Window con Plausible
+            // window.plausible("lazyload", { props: { src } });
           });
         });
     
